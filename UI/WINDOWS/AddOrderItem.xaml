@@ -1,0 +1,54 @@
+﻿<Window x:Class="OrdersSystemSql.AddOrderItem"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OrdersSystemSql"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Closing="Window_Closing"
+        Title="AddOrderItem" Height="500" Width="500">
+    <Grid>
+        <StackPanel x:Name="OrderInfoContainer"
+                    Width="300"
+                    Margin="10"
+                    VerticalAlignment="Center">
+            <TextBlock Text="Choose Product:"
+                       HorizontalAlignment="Center"/>
+            <ComboBox x:Name="ProductsContainer"
+                      SelectionChanged="ProductsContainer_SelectionChanged"
+                      DisplayMemberPath="Name"/>
+
+            <StackPanel x:Name="Quantity_Value"
+                        HorizontalAlignment="Center"
+                        Margin="0, 10, 0, 10">
+                <TextBlock Text="Quantity:"
+                           Width="50"
+                           TextAlignment="Center"/>
+                <TextBox Width="150" x:Name="ItemQuantity_Value"/>
+
+                <TextBlock Text="Your choise:"
+                           Width="70"
+                           TextAlignment="Center"/>
+                <TextBox Width="150" x:Name="ItemQuantityForOrder_Value"/>
+            </StackPanel>
+
+            <StackPanel x:Name="BtnsOrderInfo"
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Center">
+                <Button Content="Add Item"
+                        Click="Add_Click"
+                        Width="60"
+                        Height="20"
+                        FontSize="10"
+                        Margin="5"/>
+                <Button Content="Go Back"
+                        Click="Back_Click"
+                        Width="60"
+                        Height="20"
+                        FontSize="10"
+                        Margin="5"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>

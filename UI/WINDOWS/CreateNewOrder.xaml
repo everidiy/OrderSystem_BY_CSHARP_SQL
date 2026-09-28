@@ -1,0 +1,83 @@
+﻿<Window x:Class="OrdersSystemSql.CreateNewOrder"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OrdersSystemSql"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Closing="Window_Closing"
+        Title="CreateNewOrder" Height="500" Width="500">
+    <Grid>
+        <StackPanel x:Name="OrderInfoContainer"
+            Width="300"
+            Margin="10"
+            VerticalAlignment="Center">
+            
+            <TextBlock Text="Choose Customer:"
+               HorizontalAlignment="Center"/>
+            <ComboBox x:Name="CustomersContainer"
+                      DisplayMemberPath="Name"/>
+
+            <TextBlock Text="Order Items:"
+                       HorizontalAlignment="Center"/>
+            <ListView x:Name="OrderItemsContainer"
+                      Height="100">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding Product.Name}" FontWeight="Bold" Margin="0,0,5,0"/>
+
+                            <TextBlock Text="{Binding Quantity, StringFormat='(x{0})'}" Foreground="Gray"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            
+                <StackPanel x:Name="BtnsOrderInfo"
+                            Orientation="Horizontal"
+                            HorizontalAlignment="Center">
+                <Button Content="Add Item"
+                        Click="Add_Click"
+                        Width="60"
+                        Height="20"
+                        FontSize="10"
+                        Margin="5"/>
+                <Button Content="Delete Item"
+                        Click="Delete_Click"
+                        Width="60"
+                        Height="20"
+                        FontSize="10"
+                        Margin="5"/>
+                </StackPanel>
+
+            <StackPanel x:Name="Total_Value"
+                        Orientation="Horizontal"
+                        HorizontalAlignment="Center"
+                        Margin="0, 10, 0, 10">
+                <TextBlock Text="Total:"
+                           Width="50"
+                           TextAlignment="Center"/>
+                <TextBox Width="150" x:Name="TotalPrice"/>
+            </StackPanel>
+
+            <StackPanel x:Name="BtnsInfo"
+                Orientation="Horizontal"
+                HorizontalAlignment="Center">
+                <Button Content="Go Back"
+                    Click="Back_Click"
+                    Width="100"
+                    Height="30"
+                    FontSize="15"
+                    Margin="10"/>
+                <Button Content="Save"
+                    Click="Save_Click"
+                    Width="100"
+                    Height="30"
+                    FontSize="15"
+                    Margin="10"/>
+            </StackPanel>
+            
+        </StackPanel>
+    </Grid>
+</Window>
