@@ -48,7 +48,7 @@
 1. Клонируйте репозиторий:
 
    ```bash
-   git clone https://github.com/everidiy/OrderSystem_BY_CSHARP_SQL.git
+   git clone https://github.com/everidiy/OrderSystem_BY_CSHARP_SQL
    ```
 
 2. Откройте решение проекта в Visual Studio.
