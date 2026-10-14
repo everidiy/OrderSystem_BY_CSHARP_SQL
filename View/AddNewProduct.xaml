@@ -1,0 +1,51 @@
+﻿<Window x:Class="OrdersSystemSql.AddNewProduct"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OrdersSystemSql"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="AddNewProduct" Height="500" Width="500">
+    <Grid>
+        <StackPanel x:Name="CustomerInfoContainer"
+                Width="300"
+                Margin="10"
+                VerticalAlignment="Center">
+            <TextBlock Text="Product Name:"
+                   HorizontalAlignment="Center"/>
+            <TextBox x:Name="ProductName_Value"
+                     Text="{Binding Name, 
+                UpdateSourceTrigger=PropertyChanged}"/>
+
+            <TextBlock Text="Product Price:"
+                   HorizontalAlignment="Center"/>
+            <TextBox x:Name="ProductPrice_Value"
+                     Text="{Binding Price, 
+                UpdateSourceTrigger=PropertyChanged}"/>
+
+            <TextBlock Text="Product Quantity In Stock:"
+                   HorizontalAlignment="Center"/>
+            <TextBox x:Name="ProductQuantity_Value"
+                     Text="{Binding Quantity, 
+                UpdateSourceTrigger=PropertyChanged}"/>
+
+            <StackPanel x:Name="BtnsInfo"
+                        Orientation="Horizontal"
+                        HorizontalAlignment="Center">
+                <Button Content="Go Back"
+                        Command="{Binding BackCommand}"
+                        Width="100"
+                        Height="30"
+                        FontSize="15"
+                        Margin="10"/>
+                <Button Content="Save"
+                        Command="{Binding SaveCommand}"
+                        Width="100"
+                        Height="30"
+                        FontSize="15"
+                        Margin="10"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>
